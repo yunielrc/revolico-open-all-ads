@@ -13,14 +13,13 @@ chrome.runtime.onInstalled.addListener((details) => {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
     chrome.declarativeContent.onPageChanged.addRules([rule])
   })
-})
-
-// Context Menu
-chrome.contextMenus.create({
-  id: 'menu-open-adds',
-  title: 'Revolico: Open all ads',
-  contexts: ['page'],
-  documentUrlPatterns: ['https://www.revolico.com/*']
+  // Context Menu
+  chrome.contextMenus.create({
+    id: 'menu-open-adds',
+    title: 'Revolico: Open all ads',
+    contexts: ['page'],
+    documentUrlPatterns: ['https://www.revolico.com/*']
+  })
 })
 
 // Functions
