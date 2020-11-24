@@ -1,0 +1,40 @@
+{
+  "name": "revolico open all ads",
+  "version": "0.1.0",
+  "description": "Open each ad from a revolico list in a new tab",
+  "permissions": ["declarativeContent", "contextMenus"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.revolico.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "page_action": {
+    "default_title": "Revolico: Open all ads",
+    "default_icon": {
+      "16": "icons/get_started16.png",
+      "32": "icons/get_started32.png",
+      "48": "icons/get_started48.png",
+      "128": "icons/get_started128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/get_started16.png",
+    "32": "icons/get_started32.png",
+    "48": "icons/get_started48.png",
+    "128": "icons/get_started128.png"
+  },
+  "commands": {
+    "open-adds": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E"
+      },
+      "description": "Revolico: Open all ads"
+    }
+  },
+  "manifest_version": 2
+}
